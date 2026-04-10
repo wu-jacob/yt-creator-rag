@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Creator Q&A</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main>
+    <app-card>
+      <h1 slot="title">YouTube Creator Q&amp;A</h1>
+      <p slot="subtitle">Ask a question and get an answer in the creator's voice, written to Notion.</p>
+
+      <form id="form">
+        <label-input
+          label="YouTube Channel"
+          prefix="@"
+          input-id="handle"
+          placeholder="lexfridman"
+        ></label-input>
+
+        <label-input
+          label="Your Question"
+          input-id="question"
+          multiline
+          placeholder="What does he think about consciousness?"
+        ></label-input>
+
+        <label-input
+          label="Notion Integration Secret"
+          input-id="notionToken"
+          placeholder="secret_..."
+          sensitive
+        ></label-input>
+
+        <label-input
+          label="Notion Page ID"
+          input-id="notionPageId"
+          placeholder="2c0e38b3b6a1804497c0de4e97c7f2b8"
+        ></label-input>
+
+        <submit-button id="btn">Ask</submit-button>
+      </form>
+
+      <status-message id="status"></status-message>
+    </app-card>
+  </main>
+
+  <footer>
+    <p>Powered by <strong>Gemini 2.5 Flash</strong> &amp; YouTube Data API &nbsp;·&nbsp; Want to use your own model? <a href="https://github.com/YOUR_USERNAME/notion-yt-creator-rag" target="_blank">Download the code</a></p>
+    <p>Made with love by Jacob Wu &lt;3</p>
+  </footer>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
